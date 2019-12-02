@@ -58,6 +58,7 @@ public class TastingRoomService {
 
     }
 
+
     private void doPlaceOrder(Customer customer) {
         String beerToOrder = getRandomBeerUpc();
 
