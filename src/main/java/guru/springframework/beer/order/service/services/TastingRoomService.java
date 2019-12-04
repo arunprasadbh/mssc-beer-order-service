@@ -100,6 +100,6 @@ public class TastingRoomService {
     }
 
     private String getRandomBeerUpc() {
-        return beerUpcs.get(new Random().nextInt(beerUpcs.size()-1));
+        return beerUpcs.get(new Random().nextInt(beerUpcs.size()) );
     }
 }

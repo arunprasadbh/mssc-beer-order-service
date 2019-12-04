@@ -18,19 +18,22 @@ import java.util.UUID;
 public class BeerOrderLine extends BaseEntity{
 
     @Builder
-    public BeerOrderLine(Integer version, Timestamp createdDate, Timestamp lastModifiedDate, BeerOrder beerOrder,
-                         UUID beerId, Integer orderQuantity, Integer quantityAllocated) {
+    public BeerOrderLine(Integer version, Timestamp createdDate, Timestamp lastModifiedDate, BeerOrder beerOrder, UUID beerId, String upc, Integer orderQuantity, Integer quantityAllocated) {
         super(version, createdDate, lastModifiedDate);
         this.beerOrder = beerOrder;
         this.beerId = beerId;
+        this.upc = upc;
         this.orderQuantity = orderQuantity;
         this.quantityAllocated = quantityAllocated;
     }
+
 
     @ManyToOne
     private BeerOrder beerOrder;
 
     private UUID beerId;
+
+    private String upc;
 
     private Integer orderQuantity = 0;
 
