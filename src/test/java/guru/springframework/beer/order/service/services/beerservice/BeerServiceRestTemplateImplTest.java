@@ -21,9 +21,9 @@ class BeerServiceRestTemplateImplTest {
     @Autowired
     BeerServiceRestTemplateImpl beerServiceRestTemplate;
 
-    @Test
-    void getBeerByUpc() {
-        Optional<BeerDto> beerDto = beerServiceRestTemplate.getBeerByUpc(BeerOrderBootStrap.BEER_1_UPC, false);
-        System.out.println("BeerDto:" + beerDto.toString());
-    }
+//    @Test
+//    void getBeerByUpc() {
+//        Optional<BeerDto> beerDto = beerServiceRestTemplate.getBeerByUpc(BeerOrderBootStrap.BEER_1_UPC, false);
+//        System.out.println("BeerDto:" + beerDto.toString());
+//    }
 }
