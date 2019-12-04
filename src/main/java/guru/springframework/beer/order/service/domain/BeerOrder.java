@@ -17,6 +17,7 @@ import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import java.sql.Timestamp;
 import java.util.Set;
+import java.util.UUID;
 
 @Getter
 @Setter
@@ -25,15 +26,16 @@ import java.util.Set;
 public class BeerOrder extends BaseEntity{
 
     @Builder
-    public BeerOrder(Integer version, Timestamp createdDate, Timestamp lastModifiedDate, String customerRef,
+    public BeerOrder(UUID id, Integer version, Timestamp createdDate, Timestamp lastModifiedDate, String customerRef,
                      Customer customer, Set<BeerOrderLine> beerOrderLines, OrderStatusEnum orderStatus,
                      String orderStatusCallbackUrl) {
-        super(version, createdDate, lastModifiedDate);
+        super(id, version, createdDate, lastModifiedDate);
         this.customerRef = customerRef;
         this.customer = customer;
         this.beerOrderLines = beerOrderLines;
         this.orderStatus = orderStatus;
         this.orderStatusCallbackUrl = orderStatusCallbackUrl;
+
     }
 
     private String customerRef;

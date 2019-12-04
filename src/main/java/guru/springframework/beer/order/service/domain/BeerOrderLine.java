@@ -18,8 +18,8 @@ import java.util.UUID;
 public class BeerOrderLine extends BaseEntity{
 
     @Builder
-    public BeerOrderLine(Integer version, Timestamp createdDate, Timestamp lastModifiedDate, BeerOrder beerOrder, UUID beerId, String upc, Integer orderQuantity, Integer quantityAllocated) {
-        super(version, createdDate, lastModifiedDate);
+    public BeerOrderLine(UUID id, Integer version, Timestamp createdDate, Timestamp lastModifiedDate, BeerOrder beerOrder, UUID beerId, String upc, Integer orderQuantity, Integer quantityAllocated) {
+        super(id, version, createdDate, lastModifiedDate);
         this.beerOrder = beerOrder;
         this.beerId = beerId;
         this.upc = upc;

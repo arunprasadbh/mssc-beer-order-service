@@ -8,6 +8,8 @@ import guru.springframework.beer.order.service.bootstrap.BeerOrderBootStrap;
 import guru.springframework.beer.order.service.domain.Customer;
 import guru.springframework.beer.order.service.repositories.BeerOrderRepository;
 import guru.springframework.beer.order.service.repositories.CustomerRepository;
+import guru.springframework.beer.order.service.services.beerservice.BeerService;
+import guru.springframework.beer.order.service.services.beerservice.model.BeerDto;
 import guru.springframework.beer.order.service.web.controllers.BeerOrderController;
 import guru.springframework.beer.order.service.web.model.BeerOrderDto;
 import guru.springframework.beer.order.service.web.model.BeerOrderLineDto;
@@ -29,16 +31,18 @@ public class TastingRoomService {
     private final BeerOrderRepository beerOrderRepository;
     private final BeerOrderService beerOrderService;
     private final BeerOrderController beerOrderController;
+    private final BeerService beerService;
 
 
 
     private final List<String> beerUpcs = new ArrayList<>(3);
 
-    public TastingRoomService(CustomerRepository customerRepository, BeerOrderRepository beerOrderRepository, BeerOrderService beerOrderService, BeerOrderController beerOrderController) {
+    public TastingRoomService(CustomerRepository customerRepository, BeerOrderRepository beerOrderRepository, BeerOrderService beerOrderService, BeerOrderController beerOrderController, BeerService beerService) {
         this.customerRepository = customerRepository;
         this.beerOrderRepository = beerOrderRepository;
         this.beerOrderService = beerOrderService;
         this.beerOrderController = beerOrderController;
+        this.beerService = beerService;
 
         beerUpcs.add(BeerOrderBootStrap.BEER_1_UPC);
         beerUpcs.add(BeerOrderBootStrap.BEER_2_UPC);
@@ -82,11 +86,14 @@ public class TastingRoomService {
     private void doPlaceOrder2(Customer customer) {
         String beerToOrder = getRandomBeerUpc();
 
-        log.info("Placing a new Order");
+
+        //log.info("Placing a new Order");
         BeerOrderLineDto beerOrderLineDto = BeerOrderLineDto.builder()
                 .upc(beerToOrder)
                 .orderQuantity(new Random().nextInt(6))
                 .build();
+
+        //log.info("Name of the beer is {}", beerOrderLineDto.getBeerName() );
         List<BeerOrderLineDto> beerOrderLineSet = new ArrayList<>();
         beerOrderLineSet.add(beerOrderLineDto);
 

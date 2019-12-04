@@ -22,10 +22,11 @@ import java.util.UUID;
 @MappedSuperclass
 public class BaseEntity {
 
-    public BaseEntity(Integer version, Timestamp createdDate, Timestamp lastModifiedDate) {
+    public BaseEntity(UUID id, Integer version, Timestamp createdDate, Timestamp lastModifiedDate) {
         this.version = version;
         this.createdDate = createdDate;
         this.lastModifiedDate = lastModifiedDate;
+        this.id = id;
     }
 
     @Id
