@@ -26,6 +26,7 @@
 /Users/arunabhamidipati/ArunProjects/SpringFrameWorkGuru/spring5/mssc-beer-order-service/src/main/java/guru/springframework/beer/order/service/web/model/BaseItem.java
 /Users/arunabhamidipati/ArunProjects/SpringFrameWorkGuru/spring5/mssc-beer-order-service/src/main/java/guru/springframework/beer/order/service/services/beerservice/model/BeerPagedList.java
 /Users/arunabhamidipati/ArunProjects/SpringFrameWorkGuru/spring5/mssc-beer-order-service/src/main/java/guru/springframework/beer/order/service/web/mappers/BeerOrderLineMapperDecorator.java
+/Users/arunabhamidipati/ArunProjects/SpringFrameWorkGuru/spring5/mssc-beer-order-service/src/main/java/guru/springframework/beer/order/service/config/JmsConfig.java
 /Users/arunabhamidipati/ArunProjects/SpringFrameWorkGuru/spring5/mssc-beer-order-service/src/main/java/guru/springframework/beer/order/service/web/model/OrderStatusUpdate.java
 /Users/arunabhamidipati/ArunProjects/SpringFrameWorkGuru/spring5/mssc-beer-order-service/src/main/java/guru/springframework/beer/order/service/web/model/BeerOrderDto.java
 /Users/arunabhamidipati/ArunProjects/SpringFrameWorkGuru/spring5/mssc-beer-order-service/src/main/java/guru/springframework/beer/order/service/services/BeerOrderService.java

@@ -37,6 +37,7 @@ guru/springframework/MsscBeerOrderServiceApplication.class
 guru/springframework/beer/order/service/web/model/BeerOrderDto$BeerOrderDtoBuilder.class
 guru/springframework/beer/order/service/domain/OrderStatusEnum.class
 guru/springframework/beer/order/service/web/model/BeerOrderDto.class
+guru/springframework/beer/order/service/config/JmsConfig.class
 guru/springframework/beer/order/service/web/model/BeerOrderLineDto.class
 guru/springframework/beer/order/service/web/model/BaseItem.class
 guru/springframework/beer/order/service/web/mappers/BeerOrderMapperImpl$1.class
