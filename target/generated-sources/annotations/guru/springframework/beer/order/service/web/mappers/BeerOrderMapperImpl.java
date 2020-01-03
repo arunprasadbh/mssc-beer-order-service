@@ -3,6 +3,7 @@ package guru.springframework.beer.order.service.web.mappers;
 import guru.springframework.beer.order.service.domain.BeerOrder;
 import guru.springframework.beer.order.service.domain.BeerOrder.BeerOrderBuilder;
 import guru.springframework.beer.order.service.domain.BeerOrderLine;
+import guru.springframework.beer.order.service.domain.BeerOrderStatusEnum;
 import guru.springframework.beer.order.service.domain.Customer;
 import guru.springframework.beer.order.service.web.model.BeerOrderDto;
 import guru.springframework.beer.order.service.web.model.BeerOrderDto.BeerOrderDtoBuilder;
@@ -19,7 +20,7 @@ import org.springframework.stereotype.Component;
 
 @Generated(
     value = "org.mapstruct.ap.MappingProcessor",
-    date = "2020-01-03T17:03:26+0000",
+    date = "2020-01-03T17:10:26+0000",
     comments = "version: 1.3.1.Final, compiler: javac, environment: Java 11.0.2 (Oracle Corporation)"
 )
 @Component
@@ -82,24 +83,24 @@ public class BeerOrderMapperImpl implements BeerOrderMapper {
         return set;
     }
 
-    protected guru.springframework.beer.order.service.domain.OrderStatusEnum orderStatusEnumToOrderStatusEnum(OrderStatusEnum orderStatusEnum) {
+    protected BeerOrderStatusEnum orderStatusEnumToOrderStatusEnum(OrderStatusEnum orderStatusEnum) {
         if ( orderStatusEnum == null ) {
             return null;
         }
 
-        guru.springframework.beer.order.service.domain.OrderStatusEnum orderStatusEnum1;
+        BeerOrderStatusEnum beerOrderStatusEnum1;
 
         switch ( orderStatusEnum ) {
-            case NEW: orderStatusEnum1 = guru.springframework.beer.order.service.domain.OrderStatusEnum.NEW;
+            case NEW: beerOrderStatusEnum1 = BeerOrderStatusEnum.NEW;
             break;
-            case READY: orderStatusEnum1 = guru.springframework.beer.order.service.domain.OrderStatusEnum.READY;
+            case READY: beerOrderStatusEnum1 = BeerOrderStatusEnum.READY;
             break;
-            case PICKED_UP: orderStatusEnum1 = guru.springframework.beer.order.service.domain.OrderStatusEnum.PICKED_UP;
+            case PICKED_UP: beerOrderStatusEnum1 = BeerOrderStatusEnum.PICKED_UP;
             break;
             default: throw new IllegalArgumentException( "Unexpected enum constant: " + orderStatusEnum );
         }
 
-        return orderStatusEnum1;
+        return beerOrderStatusEnum1;
     }
 
     private UUID beerOrderCustomerId(BeerOrder beerOrder) {
@@ -130,21 +131,21 @@ public class BeerOrderMapperImpl implements BeerOrderMapper {
         return list;
     }
 
-    protected OrderStatusEnum orderStatusEnumToOrderStatusEnum1(guru.springframework.beer.order.service.domain.OrderStatusEnum orderStatusEnum) {
-        if ( orderStatusEnum == null ) {
+    protected OrderStatusEnum orderStatusEnumToOrderStatusEnum1(BeerOrderStatusEnum beerOrderStatusEnum) {
+        if ( beerOrderStatusEnum == null ) {
             return null;
         }
 
         OrderStatusEnum orderStatusEnum1;
 
-        switch ( orderStatusEnum ) {
+        switch (beerOrderStatusEnum) {
             case NEW: orderStatusEnum1 = OrderStatusEnum.NEW;
             break;
             case READY: orderStatusEnum1 = OrderStatusEnum.READY;
             break;
             case PICKED_UP: orderStatusEnum1 = OrderStatusEnum.PICKED_UP;
             break;
-            default: throw new IllegalArgumentException( "Unexpected enum constant: " + orderStatusEnum );
+            default: throw new IllegalArgumentException( "Unexpected enum constant: " + beerOrderStatusEnum);
         }
 
         return orderStatusEnum1;
